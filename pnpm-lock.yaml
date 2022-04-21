@@ -1,16 +1,20 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@react-google-maps/api': ^2.8.1
   eslint: 8.13.0
   eslint-config-next: 12.1.5
   next: 12.1.5
   react: 18.0.0
   react-dom: 18.0.0
+  use-places-autocomplete: ^2.0.0
 
 dependencies:
+  '@react-google-maps/api': 2.8.1_react-dom@18.0.0+react@18.0.0
   next: 12.1.5_react-dom@18.0.0+react@18.0.0
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
+  use-places-autocomplete: 2.0.0_react@18.0.0
 
 devDependencies:
   eslint: 8.13.0
@@ -49,6 +53,20 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@googlemaps/js-api-loader/1.13.10:
+    resolution: {integrity: sha512-11AF8SdXca1+trN7kDYiPqwxcjQjet/e/A20PPR2hMHQIZ0ktxd4VsqbsSDLj1BZW1bke0FnZ4zY0KYmgWZ9cg==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+    dev: false
+
+  /@googlemaps/markerclusterer/2.0.2:
+    resolution: {integrity: sha512-wApQwUZgxTDK69zkeNTZm6w5POEnpWPFOy+eRMRvgAdUCU7ky8siwoXbX3vChnCFHjVgIKLrC0YNjVCBJXLfLQ==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-equals: 3.0.1
+      supercluster: 7.1.5
+    dev: false
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
@@ -204,13 +222,47 @@ packages:
       fastq: 1.13.0
     dev: true
 
+  /@react-google-maps/api/2.8.1_react-dom@18.0.0+react@18.0.0:
+    resolution: {integrity: sha512-JH35zv21socmbkEi/xTbNiXO794mGCFHXtxNeNY77ZvP2BtCzj2oXFTwGCslUUb1YMb/Aahka7sk7YR1vBAWOA==}
+    peerDependencies:
+      react: ^16.6.3 || ^17.0.0
+      react-dom: ^16.6.3 || ^17.0.0
+    dependencies:
+      '@googlemaps/js-api-loader': 1.13.10
+      '@googlemaps/markerclusterer': 2.0.2
+      '@react-google-maps/infobox': 2.8.0
+      '@react-google-maps/marker-clusterer': 2.9.0
+      '@types/google.maps': 3.48.3
+      invariant: 2.2.4
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
+    dev: false
+
+  /@react-google-maps/infobox/2.8.0:
+    resolution: {integrity: sha512-OzLnJfPZnOJGRsS93Arq80ndLk7Etw07uyAqo5IPtS12Qs9rlm5+L3jDUdZKC3URlWEifHLeCykQbCVWHpA+pg==}
+    dev: false
+
+  /@react-google-maps/marker-clusterer/2.9.0:
+    resolution: {integrity: sha512-BJJH2OXdUreVNdfTCuuO2oHoqBmXSnXtIQvbRYj3LwZ27nnzfY87D/KEUPXnCXj/56kEeVlBbvAbcKKeMRmkSw==}
+    dependencies:
+      '@typescript/lib-dom': /@types/web/0.0.61
+    dev: false
+
   /@rushstack/eslint-patch/1.0.8:
     resolution: {integrity: sha512-ZK5v4bJwgXldAUA8r3q9YKfCwOqoHTK/ZqRjSeRXQrBXWouoPnS4MQtgC4AXGiiBuUu5wxrRgTlv0ktmM4P1Aw==}
     dev: true
 
+  /@types/google.maps/3.48.3:
+    resolution: {integrity: sha512-JQuLWAEXDorNfarQy22WbIezbPKhLnsTBnDw25vyg61USZLTK8KqE1glNyASKn2v2mUOcEIWFMNHX5hNzjuw/g==}
+    dev: false
+
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
     dev: true
+
+  /@types/web/0.0.61:
+    resolution: {integrity: sha512-lQ4M3OSh8eFj55fz1RJsLhCubET/7duOXoKcxVaUXYXyxikD9BA+WWrqAn5CjJxrc82b7zFY4OCVIeVdkPLaGg==}
+    dev: false
 
   /@typescript-eslint/parser/5.10.1_eslint@8.13.0:
     resolution: {integrity: sha512-GReo3tjNBwR5RnRO0K2wDIDN31cM3MmDtgyQ85oAxAmC5K3j/g85IjP+cDfcqDsDDBf1HNKQAD0WqOYL8jXqUA==}
@@ -797,7 +849,10 @@ packages:
 
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
-    dev: true
+
+  /fast-equals/3.0.1:
+    resolution: {integrity: sha512-J9FxqqC9E/ja0C+SYhoG3Jl6pQuhP92HNcVC75xDEhB+GUzPnjEp3vMfPIxPprYZFfXS5hpVvvPCWUMiDSMS8Q==}
+    dev: false
 
   /fast-glob/3.2.11:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
@@ -1016,6 +1071,12 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /invariant/2.2.4:
+    resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
   /is-bigint/1.0.4:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
     dependencies:
@@ -1147,6 +1208,10 @@ packages:
       array-includes: 3.1.4
       object.assign: 4.1.2
     dev: true
+
+  /kdbush/3.0.0:
+    resolution: {integrity: sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==}
+    dev: false
 
   /language-subtag-registry/0.3.21:
     resolution: {integrity: sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg==}
@@ -1631,6 +1696,12 @@ packages:
       react: 18.0.0
     dev: false
 
+  /supercluster/7.1.5:
+    resolution: {integrity: sha512-EulshI3pGUM66o6ZdH3ReiFcvHpM3vAigyK+vcxdjpJyEbIIrtbmBdY23mGgnI24uXiGFvrGq9Gkum/8U7vJWg==}
+    dependencies:
+      kdbush: 3.0.0
+    dev: false
+
   /supports-color/7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -1702,6 +1773,14 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: true
+
+  /use-places-autocomplete/2.0.0_react@18.0.0:
+    resolution: {integrity: sha512-MO1MBaaOW+tK8iatf9CPBbjwvtoa7lCNVamAkne9pTP6YcKmbQa/uLZa5nLqR5E8WulvLcC/R4Skuw1joVz45Q==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
